@@ -1,3 +1,14 @@
 from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
+from . import models
+from . import serializers
 
-# Create your views here.
+class ServiceViewSet(ModelViewSet):
+
+    queryset = models.Service.objects.all()
+    serializer_class = serializers.ServiceSerializer
+
+class ReviewViewSet(ModelViewSet):
+
+    queryset = models.Review.objects.all()
+    serializer_class = serializers.ReviewSerializer
