@@ -1,30 +1,25 @@
 import './App.css'
-import axios from 'axios'
-import { useEffect } from 'react'
-import { useQuery } from '@tanstack/react-query'
-import { getReviews } from './api/api'
+import Header from './components/Header'
+import { Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import Testimonials from './pages/Testimonials'
+import About from './pages/About'
+import ServicesPage from './pages/ServicesPage'
+import Login from './pages/Login'
+
 
 const App = () => {
 
-  const {data: reviews, isLoading, isError, error} = useQuery({
-    queryKey: ['reviews'],
-    queryFn: getReviews
-  })
-
-  if (isLoading) return <p>Loading ...</p>
-
-  if (isError) return <p>{error.message}</p>
-
   return (
     <div>
-      <h1>Build Right</h1>
-      {reviews && reviews.map(review => (
-        <div key={review.id}>
-          <h2>{review.customer_name}</h2>
-          <h3>{review.title}</h3>
-          <p>{review.description}</p>
-        </div>
-      ))}
+      <Header />
+      <Routes>
+        <Route path='' element={<Home />}/>
+        <Route path='about' element={<About />}/>
+        <Route path='testimonials' element={<Testimonials />}/>
+        <Route path='services' element={<ServicesPage />}/>
+        <Route path='login' element={<Login />}/>
+      </Routes>
     </div>
   )
 }
