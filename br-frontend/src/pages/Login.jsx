@@ -12,7 +12,6 @@ const Login = () => {
     const [password, setPassword] = useState("")
     const navigate = useNavigate()
     const {user, setUser} = useAuth()
-    // const {mutate} = useUser(user, setUser, access, refresh)
     const {mutate: userMutation} = useUser(user, setUser)
 
     const {mutate} = useMutation({
