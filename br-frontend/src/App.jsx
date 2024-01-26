@@ -6,6 +6,7 @@ import Testimonials from './pages/Testimonials'
 import About from './pages/About'
 import ServicesPage from './pages/ServicesPage'
 import Login from './pages/Login'
+import PersistLogin from './components/PersistLogin'
 
 
 const App = () => {
@@ -14,11 +15,13 @@ const App = () => {
     <div>
       <Header />
       <Routes>
-        <Route path='' element={<Home />}/>
-        <Route path='about' element={<About />}/>
-        <Route path='testimonials' element={<Testimonials />}/>
-        <Route path='services' element={<ServicesPage />}/>
-        <Route path='login' element={<Login />}/>
+        <Route element={<PersistLogin />}>
+          <Route path='' element={<Home />}/>
+          <Route path='about' element={<About />}/>
+          <Route path='testimonials' element={<Testimonials />}/>
+          <Route path='services' element={<ServicesPage />}/>
+          <Route path='login' element={<Login />}/>
+        </Route>
       </Routes>
     </div>
   )
