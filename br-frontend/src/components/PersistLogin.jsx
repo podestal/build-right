@@ -8,13 +8,13 @@ const PersistLogin = () => {
     const access = localStorage.getItem('access')
     const refresh = localStorage.getItem('refresh')
     const {user, setUser} = useAuth()
-    const {mutate} = useUser(user, setUser)
+    const {mutate} = useUser(user, setUser, access, refresh)
 
     useEffect(() => {
-        setUser({access, refresh})
-        console.log('access', access)
-        mutate({ access })
-    }, [])
+        if (access != undefined && user?.username == undefined) {
+            mutate({ access })
+        }
+    }, [access])
 
 
   return (

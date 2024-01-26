@@ -1,7 +1,7 @@
 import { useMutation } from "@tanstack/react-query"
 import { getUser } from "../api/api"
 
-const useUser = (user, setUser) => {
+const useUser = (user, setUser, access, refresh) => {
     return useMutation({
         mutationFn: data => getUser(data),
         onSuccess: res => {
@@ -12,7 +12,9 @@ const useUser = (user, setUser) => {
                 username: res.username, 
                 email: res.email, 
                 first_name: res.first_name, 
-                last_name: res.last_name 
+                last_name: res.last_name, 
+                access,
+                refresh,
             })
         }
     })

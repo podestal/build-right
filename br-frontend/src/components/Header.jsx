@@ -14,8 +14,11 @@ const Header = () => {
         <Link to={'/about'}>About</Link>
         <Link to={'/testimonials'}>Testimonials</Link>
         <Link to={'/services'}>Services</Link>
-        <h2>Welcome {user?.first_name}</h2>
-        <Logout />
+        {user && 
+        <>
+            <h2>Welcome {user?.first_name}</h2>
+            <Logout />
+        </>}
     </nav>
   )
 }
