@@ -14,7 +14,7 @@ const Login = () => {
         mutationFn: data => login(data),
         onSuccess: (data) => {
             localStorage.setItem('access', data.access)
-            localStorage.setItem('access', data.refresh)
+            localStorage.setItem('refresh', data.refresh)
             navigate('/')
         }
     })
