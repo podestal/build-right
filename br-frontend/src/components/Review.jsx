@@ -1,20 +1,16 @@
 import React, { useState } from 'react'
 import ReviewForm from './ReviewForm'
 import { deleteReview } from '../api/api'
-import { useMutation } from '@tanstack/react-query'
-import { useQueryClient } from '@tanstack/react-query'
 import useAuth from '../hooks/useAuth'
+import useMutate from '../hooks/useMutate'
 
 export const Review = ({ review }) => {
 
     const [edit, setEdit] = useState(false)
-    const queryClient = useQueryClient()
     const {user} = useAuth()
 
-    const {mutate} = useMutation({
-        mutationFn: data => deleteReview(data),
-        onSuccess: queryClient.invalidateQueries(['reviews'])
-    })
+    const {mutate} = useMutate(deleteReview, 'reviews')
+
 
     const handleDelete = () => {
         mutate({ id: review.id, access: user.access })

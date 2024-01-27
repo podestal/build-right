@@ -22,6 +22,12 @@ export const createService = data => baseAxios.post(SERVICES, data.service, {
                                             .then(res => res.data)
                                             .catch(err => err)
 
+export const updateService = data => baseAxios.put(`${SERVICES}${data.id}/`, data.updates ,{
+    headers: { Authorization: `JWT ${data.access}` }
+                                            })
+                                            .then(res => res.data)
+                                            .catch(err => err)
+
 // REVIEWS
 
 export const getReviews = () => baseAxios.get(REVIEWS)

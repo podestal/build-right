@@ -1,39 +1,57 @@
 import React, { useState } from 'react'
-import { useMutation, useQueryClient } from '@tanstack/react-query'
-import { createReview, updateReview } from '../api/api'
+import { createReview, updateReview, createService, updateService } from '../api/api'
 import useAuth from '../hooks/useAuth'
 import useMutate from '../hooks/useMutate'
 
-const ReviewForm = ({ review, setEdit }) => {
+const ReviewForm = ({ review, setEdit, service }) => {
 
-    const queryClient = useQueryClient()
     const [customer, setCustomer] = useState(review?.customer_name || "")
-    const [title, setTitle] = useState(review?.title || "")
-    const [description, setDescription] = useState(review?.description || "")
+    const [title, setTitle] = useState(review?.title || service?.title || "")
+    const [description, setDescription] = useState(review?.description || service?.description || "")
     const {user} = useAuth()
-    
-    const {mutate: update} = useMutate(updateReview, 'reviews')
-    const {mutate: create} = useMutate(createReview, 'reviews')
+    const url = window.location.href
+    const route = url.split('/')[(url.split('/')).length - 1]
+
+
+    const {mutate: reviewUpdate} = useMutate(updateReview, 'reviews')
+    const {mutate: reviewCreate} = useMutate(createReview, 'reviews')
+    const {mutate: serviceCreate} = useMutate(createService, 'services')
+    const {mutate: serviceUpdate} = useMutate(updateService, 'services')
 
     const handleSubmit = e => {
-        if (review) {
-            update({ id:review.id, updates: {customer_name: customer, title, description}, access: user.access})
-        } else {
-            e.preventDefault()
-            create({ review: {customer_name: customer, title, description}, access: user.access })
-            setCustomer("")
-            setTitle("")
-            setDescription("")
+        e.preventDefault()
+        if (route == 'services') {
+            if (service) {
+                serviceUpdate({ id:service.id, updates: {title, description}, access: user.access})
+                setEdit(false)
+            } else {
+                console.log('creating')
+                serviceCreate({ service: {title, description}, access: user.access })
+                setTitle("")
+                setDescription("")
+            }
+        }
+        else {
+            if (review) {
+                reviewUpdate({ id:review.id, updates: {customer_name: customer, title, description}, access: user.access})
+                setEdit(false)
+            } else {
+                reviewCreate({ review: {customer_name: customer, title, description}, access: user.access })
+                setCustomer("")
+                setTitle("")
+                setDescription("")
+            }
         }
     }
   return (
     <form onSubmit={handleSubmit}>
+        {route == 'testimonials' &&         
         <input 
             type='text'
             placeholder='Customer Name'
             value={customer}
             onChange={e => setCustomer(e.target.value)}
-        />
+        />}
         <input 
             type='text'
             placeholder='Title'

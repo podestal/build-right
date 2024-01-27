@@ -8,7 +8,10 @@ const useMutate = (apiFunction, queryKey) => {
 
   return useMutation({
     mutationFn: data => apiFunction(data),
-    onSuccess: queryClient.invalidateQueries([queryKey])
+    onSuccess: res => {
+        queryClient.invalidateQueries([queryKey])
+        console.log(res)
+    }
   })
 }
 
