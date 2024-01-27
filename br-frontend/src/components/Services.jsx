@@ -2,7 +2,7 @@ import React from 'react'
 import { getServices } from '../api/api'
 import { useQuery } from '@tanstack/react-query'
 import Service from './Service'
-import ReviewForm from './ReviewForm'
+import CreateUpdateForm from './CreateUpdateForm'
 
 const Services = () => {
 
@@ -23,7 +23,7 @@ const Services = () => {
                 service={service}
             />
         ))}
-        <ReviewForm />
+        <CreateUpdateForm />
     </div>
   )
 }

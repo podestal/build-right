@@ -3,7 +3,7 @@ import { createReview, updateReview, createService, updateService } from '../api
 import useAuth from '../hooks/useAuth'
 import useMutate from '../hooks/useMutate'
 
-const ReviewForm = ({ review, setEdit, service }) => {
+const CreateUpdateForm = ({ review, setEdit, service }) => {
 
     const [customer, setCustomer] = useState(review?.customer_name || "")
     const [title, setTitle] = useState(review?.title || service?.title || "")
@@ -64,9 +64,9 @@ const ReviewForm = ({ review, setEdit, service }) => {
             value={description}
             onChange={e => setDescription(e.target.value)}
         />
-        <button type='submit'>{review ? "Update" : "Create"}</button>
+        <button type='submit'>{review || service ? "Update" : "Create"}</button>
     </form>
   )
 }
 
-export default ReviewForm
+export default CreateUpdateForm

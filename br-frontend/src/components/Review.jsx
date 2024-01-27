@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import ReviewForm from './ReviewForm'
+import CreateUpdateForm from './CreateUpdateForm'
 import { deleteReview } from '../api/api'
 import useAuth from '../hooks/useAuth'
 import useMutate from '../hooks/useMutate'
+import Delete from './Delete'
 
 export const Review = ({ review }) => {
 
@@ -21,7 +22,7 @@ export const Review = ({ review }) => {
         {edit 
         ? 
         <>
-            <ReviewForm 
+            <CreateUpdateForm 
                 review={review}
                 setEdit={setEdit}
             />
@@ -34,7 +35,10 @@ export const Review = ({ review }) => {
             {user && 
             <>
                 <button onClick={e => setEdit(prev => !prev)}>Edit</button>
-                <button onClick={handleDelete}>Delete</button>
+                <Delete 
+                    review={review}
+                    access={user.access}
+                />
             </>}
         </>
         }

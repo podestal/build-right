@@ -28,6 +28,12 @@ export const updateService = data => baseAxios.put(`${SERVICES}${data.id}/`, dat
                                             .then(res => res.data)
                                             .catch(err => err)
 
+export const deleteService = data => baseAxios.delete(`${SERVICES}${data.id}/`, {
+    headers: { Authorization: `JWT ${data.access}` }
+                                            })
+                                            .then(res => res.data)
+                                            .catch(err => err)
+
 // REVIEWS
 
 export const getReviews = () => baseAxios.get(REVIEWS)

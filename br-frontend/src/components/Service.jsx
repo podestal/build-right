@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import ReviewForm from './ReviewForm'
+import CreateUpdateForm from './CreateUpdateForm'
 import useAuth from '../hooks/useAuth'
+import Delete from './Delete'
 
 const Service = ({ service }) => {
 
@@ -9,14 +10,10 @@ const Service = ({ service }) => {
 
   return (
     <div>
-        {/* <h2>{service.title}</h2>
-        <p>{service.description}</p>
-        <button>Edit</button>
-        <button>Delete</button> */}
         {edit 
         ? 
         <>
-            <ReviewForm 
+            <CreateUpdateForm 
                 service={service}
                 setEdit={setEdit}
             />
@@ -28,7 +25,10 @@ const Service = ({ service }) => {
             {user && 
             <>
                 <button onClick={e => setEdit(prev => !prev)}>Edit</button>
-                <button>Delete</button>
+                <Delete 
+                    service={service}
+                    access={user.access}
+                />
             </>}
         </>
         }

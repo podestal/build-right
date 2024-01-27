@@ -2,7 +2,7 @@ import React from 'react'
 import Review from './Review'
 import { useQuery } from '@tanstack/react-query'
 import { getReviews } from '../api/api'
-import ReviewForm from './ReviewForm'
+import CreateUpdateForm from './CreateUpdateForm'
 import useAuth from '../hooks/useAuth'
 
 const Reviews = () => {
@@ -26,7 +26,7 @@ const Reviews = () => {
                 review={review}
             />
         ))}
-        {user && <ReviewForm />}
+        {user && <CreateUpdateForm />}
     </div>
   )
 }
