@@ -1,17 +1,43 @@
 import React, { useState } from 'react'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
+import { createService } from '../api/api'
+import useAuth from '../hooks/useAuth'
 
-const ServiceForm = () => {
+const ServiceForm = ({ service }) => {
 
-    const [title, setTitle] = useState()
-    const [description, setDescription] = useState()
+    const [title, setTitle] = useState("")
+    const [description, setDescription] = useState("")
+
+    const queryClient = useQueryClient()
+    const {user} = useAuth()
+    const {mutate: create} = useMutation({
+        mutationFn: data => createService(data),
+        onSuccess: queryClient.invalidateQueries(['services'])
+    })
+
+    const handleSubmit = e => {
+        e.preventDefault()
+        create({ service: {
+            title,
+            description
+        }, access: user.access})
+    }
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
         <input 
             type='text'
             placeholder='Service Title'
-
+            value={title}
+            onChange={e => setTitle(e.target.value)}
         />
+        <textarea 
+            type='text'
+            placeholder='Service Description'
+            value={description}
+            onChange={e => setDescription(e.target.value)}
+        />
+        <button type='submit'>Create</button>
     </form>
   )
 }

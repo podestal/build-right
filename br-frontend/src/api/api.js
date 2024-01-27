@@ -16,6 +16,12 @@ export const getServices = () => baseAxios.get(SERVICES)
                                             .then(res => res.data)
                                             .catch(err => err) 
 
+export const createService = data => baseAxios.post(SERVICES, data.service, {
+    headers: { Authorization: `JWT ${data.access}` }
+                                            })
+                                            .then(res => res.data)
+                                            .catch(err => err)
+
 // REVIEWS
 
 export const getReviews = () => baseAxios.get(REVIEWS)
