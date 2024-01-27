@@ -5,8 +5,8 @@ import useAuth from '../hooks/useAuth'
 
 const ServiceForm = ({ service }) => {
 
-    const [title, setTitle] = useState("")
-    const [description, setDescription] = useState("")
+    const [title, setTitle] = useState(service?.title || "")
+    const [description, setDescription] = useState(service?.description || "")
 
     const queryClient = useQueryClient()
     const {user} = useAuth()
@@ -37,7 +37,7 @@ const ServiceForm = ({ service }) => {
             value={description}
             onChange={e => setDescription(e.target.value)}
         />
-        <button type='submit'>Create</button>
+        <button type='submit'>{service ? 'Update' : 'Create'}</button>
     </form>
   )
 }

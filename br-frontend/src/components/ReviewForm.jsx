@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { createReview, updateReview } from '../api/api'
 import useAuth from '../hooks/useAuth'
+import useMutate from '../hooks/useMutate'
 
 const ReviewForm = ({ review, setEdit }) => {
 
@@ -10,16 +11,9 @@ const ReviewForm = ({ review, setEdit }) => {
     const [title, setTitle] = useState(review?.title || "")
     const [description, setDescription] = useState(review?.description || "")
     const {user} = useAuth()
-
-    const {mutate: update} = useMutation({
-        mutationFn: data => updateReview(data),
-        onSuccess: queryClient.invalidateQueries(['reviews'])
-    })
-
-    const {mutate: create} = useMutation({
-        mutationFn: data => createReview(data),
-        onSuccess: queryClient.invalidateQueries(['reviews'])
-    })
+    
+    const {mutate: update} = useMutate(updateReview, 'reviews')
+    const {mutate: create} = useMutate(createReview, 'reviews')
 
     const handleSubmit = e => {
         if (review) {
