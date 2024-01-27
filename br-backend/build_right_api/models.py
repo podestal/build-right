@@ -11,3 +11,7 @@ class Review(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
 
+class ServiceImage(models.Model):
+
+    service = models.ForeignKey(Service, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='api/images')

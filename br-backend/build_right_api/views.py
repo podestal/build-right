@@ -15,3 +15,13 @@ class ReviewViewSet(ModelViewSet):
     queryset = models.Review.objects.all()
     serializer_class = serializers.ReviewSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
+
+class ServiceImageViewSet(ModelViewSet):
+
+    serializer_class = serializers.ServiceImageSerializer
+
+    def get_serializer_context(self):
+        return {'service_id': self.kwargs['service_pk']}
+
+    def get_queryset(self):
+        return models.ServiceImage.objects.filter(service_id=self.kwargs['service_pk'])
