@@ -22,15 +22,21 @@ export const getReviews = () => baseAxios.get(REVIEWS)
                                             .then(res => res.data)
                                             .catch(err => err) 
 
-export const createReview = data => baseAxios.post(REVIEWS, data.review)
+export const createReview = data => baseAxios.post(REVIEWS, data.review, {
+    headers: { Authorization: `JWT ${data.access}` }
+                                            })
                                             .then(res => res.data)
                                             .catch(err => err)
 
-export const updateReview = data => baseAxios.put(`${REVIEWS}${data.id}/`, data.updates)
+export const updateReview = data => baseAxios.put(`${REVIEWS}${data.id}/`, data.updates ,{
+    headers: { Authorization: `JWT ${data.access}` }
+                                            })
                                             .then(res => res.data)
                                             .catch(err => err)
 
-export const deleteReview = data => baseAxios.delete(`${REVIEWS}${data.id}/`)
+export const deleteReview = data => baseAxios.delete(`${REVIEWS}${data.id}/`, {
+    headers: { Authorization: `JWT ${data.access}` }
+                                            })
                                             .then(res => res.data)
                                             .catch(err => err)
 

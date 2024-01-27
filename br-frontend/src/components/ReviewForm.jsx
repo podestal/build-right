@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { createReview, updateReview } from '../api/api'
+import useAuth from '../hooks/useAuth'
 
 const ReviewForm = ({ review, setEdit }) => {
 
@@ -8,6 +9,7 @@ const ReviewForm = ({ review, setEdit }) => {
     const [customer, setCustomer] = useState(review?.customer_name || "")
     const [title, setTitle] = useState(review?.title || "")
     const [description, setDescription] = useState(review?.description || "")
+    const {user} = useAuth()
 
     const {mutate: update} = useMutation({
         mutationFn: data => updateReview(data),
@@ -21,10 +23,10 @@ const ReviewForm = ({ review, setEdit }) => {
 
     const handleSubmit = e => {
         if (review) {
-            update({ id:review.id, updates: {customer_name: customer, title, description}})
+            update({ id:review.id, updates: {customer_name: customer, title, description}, access: user.access})
         } else {
             e.preventDefault()
-            create({ review: {customer_name: customer, title, description} })
+            create({ review: {customer_name: customer, title, description}, access: user.access })
             setCustomer("")
             setTitle("")
             setDescription("")

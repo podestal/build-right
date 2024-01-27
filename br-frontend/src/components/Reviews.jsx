@@ -3,8 +3,11 @@ import Review from './Review'
 import { useQuery } from '@tanstack/react-query'
 import { getReviews } from '../api/api'
 import ReviewForm from './ReviewForm'
+import useAuth from '../hooks/useAuth'
 
 const Reviews = () => {
+
+    const {user} = useAuth()
 
     const {data: reviews, isLoading, isError, error} = useQuery({
         queryKey: ['reviews'],
@@ -23,7 +26,7 @@ const Reviews = () => {
                 review={review}
             />
         ))}
-        <ReviewForm />
+        {user && <ReviewForm />}
     </div>
   )
 }
