@@ -65,7 +65,7 @@ export const deleteReview = data => baseAxios.delete(`${REVIEWS}${data.id}/`, {
 export const getRequests = () => baseAxios.get(REQUESTS)
                                             .then(res => res.data)
                                             .catch(err => err)
-                                            
+
 export const createRequest = data => baseAxios.post(REQUESTS, data.contact)
                                             .then(res => res.data)
                                             .catch(err => err)
@@ -73,6 +73,8 @@ export const createRequest = data => baseAxios.post(REQUESTS, data.contact)
 export const updateRequest = data => baseAxios.patch(`${REQUESTS}${data.id}/`, data.updates)
                                             .then(res => res.data)
                                             .catch(err => err)
+
+export const deleteRequest = data => baseAxios.delete(`${REQUESTS}${data.id}/`)
 
 // AUTH
 

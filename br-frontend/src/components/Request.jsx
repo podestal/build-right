@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import useMutate from '../hooks/useMutate'
 import { updateRequest } from '../api/api'
+import Delete from './Delete'
 
 const Request = ({ request }) => {
 
@@ -29,6 +30,9 @@ const Request = ({ request }) => {
             />
             <button>Update</button>
         </form>
+        <Delete 
+            request={request}
+        />
     </div>
   )
 }
