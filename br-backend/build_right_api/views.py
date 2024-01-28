@@ -6,7 +6,7 @@ from . import serializers
 
 class ServiceViewSet(ModelViewSet):
 
-    queryset = models.Service.objects.all()
+    queryset = models.Service.objects.prefetch_related('service_image').all()
     serializer_class = serializers.ServiceSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
 

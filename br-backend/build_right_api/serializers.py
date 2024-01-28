@@ -1,16 +1,6 @@
 from rest_framework import serializers
 from . import models
 
-class ServiceSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = models.Service
-        fields = '__all__'
-
-class ReviewSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = models.Review
-        fields = '__all__'
-
 class ServiceImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.ServiceImage
@@ -19,3 +9,16 @@ class ServiceImageSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         service_id = self.context['service_id']
         return models.ServiceImage.objects.create(service_id=service_id, **validated_data)
+
+class ServiceSerializer(serializers.ModelSerializer):
+
+    service_image = ServiceImageSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = models.Service
+        fields = ['id', 'title', 'description', 'service_image']
+
+class ReviewSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Review
+        fields = '__all__'

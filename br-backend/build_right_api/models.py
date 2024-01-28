@@ -13,5 +13,5 @@ class Review(models.Model):
 
 class ServiceImage(models.Model):
 
-    service = models.ForeignKey(Service, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='api/images')
+    service = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='service_image')
+    image = models.ImageField(upload_to='api/images',)

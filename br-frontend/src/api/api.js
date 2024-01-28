@@ -4,6 +4,7 @@ const BASE_URL = 'http://127.0.0.1:8000/'
 const SERVICES = 'api/services/'
 const REVIEWS = 'api/reviews/'
 const LOGIN = 'auth/jwt/create/'
+const REFRESH = 'auth/jwt/refresh/'
 const USER = 'auth/users/me/'
 
 const baseAxios = axios.create({
@@ -58,12 +59,17 @@ export const deleteReview = data => baseAxios.delete(`${REVIEWS}${data.id}/`, {
                                             .then(res => res.data)
                                             .catch(err => err)
 
-// USER
+// AUTH
 
 export const login = data => baseAxios.post(LOGIN, data.credentials)
                                         .then(res => res.data)
                                         .catch(err => err)
 
+export const refreshToken = data => baseAxios.post(REFRESH, data)
+                                        .then(res => res.data)
+                                        .catch(err => err)
+
+// USER
 export const getUser = data => baseAxios.get(USER, {
     headers: { Authorization: `JWT ${data.access}` }
 })
