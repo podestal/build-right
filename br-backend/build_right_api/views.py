@@ -25,3 +25,8 @@ class ServiceImageViewSet(ModelViewSet):
 
     def get_queryset(self):
         return models.ServiceImage.objects.filter(service_id=self.kwargs['service_pk'])
+    
+class RequestViewSet(ModelViewSet):
+
+    queryset = models.Request.objects.all()
+    serializer_class = serializers.RequestSerializer

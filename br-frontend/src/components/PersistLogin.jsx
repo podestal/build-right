@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import useAuth from '../hooks/useAuth'
 import { Outlet } from 'react-router-dom'
 import useUser from '../hooks/useUser'
-import useMutate from '../hooks/useMutate'
 import { jwtDecode } from "jwt-decode"
 import dayjs from "dayjs"
 import { refreshToken } from '../api/api'
