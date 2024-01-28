@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
+import useMutate from '../hooks/useMutate'
+import { updateRequest } from '../api/api'
 
 const Request = ({ request }) => {
 
     const [completed, setCompleted] = useState(request?.completed)
 
+    const {mutate: update} = useMutate(updateRequest, 'requests')
+
     const handleSubmit = e => {
         e.preventDefault()
-        console.log(completed)
+        update({ id:request.id, updates: {completed} })
     }
 
   return (
@@ -21,6 +25,7 @@ const Request = ({ request }) => {
                 type='checkbox'
                 value={completed}
                 onChange={e => setCompleted(!completed)}
+                checked={completed}
             />
             <button>Update</button>
         </form>

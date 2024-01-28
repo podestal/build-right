@@ -30,3 +30,4 @@ class RequestViewSet(ModelViewSet):
 
     queryset = models.Request.objects.all()
     serializer_class = serializers.RequestSerializer
+    http_method_names = ['get', 'post', 'patch', 'delete']
