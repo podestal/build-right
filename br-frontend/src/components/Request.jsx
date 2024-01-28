@@ -1,6 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Request = ({ request }) => {
+
+    const [completed, setCompleted] = useState(request?.completed)
+
+    const handleSubmit = e => {
+        e.preventDefault()
+        console.log(completed)
+    }
+
   return (
     <div>
         <h2>{request.title}</h2>
@@ -8,6 +16,14 @@ const Request = ({ request }) => {
         <p>Customer: {request?.name}</p>
         <p>Email: {request?.email}</p>
         <p>Phone: {request?.phone}</p>
+        <form onSubmit={handleSubmit}>
+            <input 
+                type='checkbox'
+                value={completed}
+                onChange={e => setCompleted(!completed)}
+            />
+            <button>Update</button>
+        </form>
     </div>
   )
 }
