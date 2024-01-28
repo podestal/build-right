@@ -7,6 +7,7 @@ import About from './pages/About'
 import ServicesPage from './pages/ServicesPage'
 import Login from './pages/Login'
 import PersistLogin from './components/PersistLogin'
+import Contact from './pages/Contact'
 
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
           <Route path='testimonials' element={<Testimonials />}/>
           <Route path='services' element={<ServicesPage />}/>
           <Route path='login' element={<Login />}/>
+          <Route path='contact' element={<Contact />}/>
         </Route>
       </Routes>
     </div>

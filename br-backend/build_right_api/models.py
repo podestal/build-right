@@ -18,17 +18,10 @@ class ServiceImage(models.Model):
 
 class Request(models.Model):
 
-    STATUS_PENDING = 'P'
-    STATUS_COMPLETED = 'C'
-
-    STATUS_CHOICES = [
-        (STATUS_PENDING, 'Pending'),
-        (STATUS_COMPLETED, 'Completed')
-    ]
-
     name = models.CharField(max_length=255)
     email = models.EmailField()
-    phone = models.IntegerField()
+    phone = models.CharField(max_length=255)
     message = models.TextField()
     created_at = models.DateTimeField(auto_now=True)
-    status = models.CharField(max_length=1, choices=STATUS_CHOICES, default=STATUS_PENDING)
+    completed = models.BooleanField(default=False)
+    

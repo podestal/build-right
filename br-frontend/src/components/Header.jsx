@@ -14,6 +14,7 @@ const Header = () => {
         <Link to={'/about'}>About</Link>
         <Link to={'/testimonials'}>Testimonials</Link>
         <Link to={'/services'}>Services</Link>
+        <Link to={'/contact'}>Contact Us</Link>
         {user && 
         <>
             <h2>Welcome {user?.first_name}</h2>

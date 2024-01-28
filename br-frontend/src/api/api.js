@@ -3,6 +3,7 @@ import axios from "axios"
 const BASE_URL = 'http://127.0.0.1:8000/'
 const SERVICES = 'api/services/'
 const REVIEWS = 'api/reviews/'
+const REQUESTS = 'api/requests/'
 const LOGIN = 'auth/jwt/create/'
 const REFRESH = 'auth/jwt/refresh/'
 const USER = 'auth/users/me/'
@@ -56,6 +57,12 @@ export const updateReview = data => baseAxios.put(`${REVIEWS}${data.id}/`, data.
 export const deleteReview = data => baseAxios.delete(`${REVIEWS}${data.id}/`, {
     headers: { Authorization: `JWT ${data.access}` }
                                             })
+                                            .then(res => res.data)
+                                            .catch(err => err)
+
+// CONTACT
+
+export const createRequest = data => baseAxios.post(REQUESTS, data.contact)
                                             .then(res => res.data)
                                             .catch(err => err)
 
