@@ -18,6 +18,12 @@ class ServiceSerializer(serializers.ModelSerializer):
         model = models.Service
         fields = ['id', 'title', 'description', 'service_image']
 
+class CreateUpdateServiceSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = models.Service
+        fields = ['title', 'description']
+
 class ReviewImageSerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -35,6 +41,12 @@ class ReviewSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Review
         fields = ['id', 'customer_name', 'title', 'description', 'review_image']
+
+class CreateUpdateReviewSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = models.Review
+        fields = ['customer_name', 'title', 'description']
 
 class RequestSerializer(serializers.ModelSerializer):
     class Meta:

@@ -8,19 +8,21 @@ const Header = () => {
     const {user} = useAuth()
 
   return (
-    <nav>
-        {console.log('user',user)}
-        <Link to={'/'}>Home</Link>
-        <Link to={'/about'}>About</Link>
-        <Link to={'/testimonials'}>Testimonials</Link>
-        <Link to={'/services'}>Services</Link>
-        <Link to={'/contact'}>Contact Us</Link>
+    <header className='header'>
+        <Link to={'/'}><h1>LOGO</h1></Link>
+        <nav className='header-nav'>
+            <Link to={'/'}>Home</Link>
+            <Link to={'/about'}>About</Link>
+            <Link to={'/testimonials'}>Testimonials</Link>
+            <Link to={'/services'}>Services</Link>
+            <Link to={'/contact'}>Contact Us</Link>
+        </nav>
         {user && 
-        <>
-            <h2>Welcome {user?.first_name}</h2>
-            <Logout />
-        </>}
-    </nav>
+          <>
+              <h2>Welcome {user?.first_name}</h2>
+              <Logout />
+          </>}
+    </header>
   )
 }
 

@@ -8,15 +8,25 @@ from . import serializers
 class ServiceViewSet(ModelViewSet):
 
     queryset = models.Service.objects.prefetch_related('service_image').all()
-    serializer_class = serializers.ServiceSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
+    http_method_names = ['get', 'post', 'patch', 'delete']
+
+    def get_serializer_class(self):
+        if self.request.method == 'POST' or self.request.method == 'PATCH':
+            return serializers.CreateUpdateServiceSerializer
+        return serializers.ServiceSerializer
 
 
 class ReviewViewSet(ModelViewSet):
 
     queryset = models.Review.objects.all()
-    serializer_class = serializers.ReviewSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
+    http_method_names = ['get', 'post', 'patch', 'delete']
+
+    def get_serializer_class(self):
+        if self.request.method == 'POST' or self.request.method == 'PATCH':
+            return serializers.CreateUpdateReviewSerializer
+        return serializers.ReviewSerializer
 
 class ServiceImageViewSet(ModelViewSet):
 

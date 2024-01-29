@@ -24,7 +24,7 @@ export const createService = data => baseAxios.post(SERVICES, data.service, {
                                             .then(res => res.data)
                                             .catch(err => err)
 
-export const updateService = data => baseAxios.put(`${SERVICES}${data.id}/`, data.updates ,{
+export const updateService = data => baseAxios.patch(`${SERVICES}${data.id}/`, data.updates ,{
     headers: { Authorization: `JWT ${data.access}` }
                                             })
                                             .then(res => res.data)
@@ -48,7 +48,7 @@ export const createReview = data => baseAxios.post(REVIEWS, data.review, {
                                             .then(res => res.data)
                                             .catch(err => err)
 
-export const updateReview = data => baseAxios.put(`${REVIEWS}${data.id}/`, data.updates ,{
+export const updateReview = data => baseAxios.patch(`${REVIEWS}${data.id}/`, data.updates ,{
     headers: { Authorization: `JWT ${data.access}` }
                                             })
                                             .then(res => res.data)
