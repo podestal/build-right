@@ -18,6 +18,16 @@ class ServiceSerializer(serializers.ModelSerializer):
         model = models.Service
         fields = ['id', 'title', 'description', 'service_image']
 
+class ReviewImageSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = models.ReviewImage
+        fields = ['id', 'state', 'image']
+
+    def create(self, validated_data):
+        review_id = self.context['review_id']
+        return models.ReviewImage.objects.create(review_id=review_id, **validated_data)
+
 class ReviewSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Review
