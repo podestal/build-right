@@ -21,7 +21,7 @@ export const Review = ({ review }) => {
             />
             <Images 
                 images={review?.review_image}
-                service={review}
+                review={review}
             />
             <h2>Before</h2>
             <ImageForm 
@@ -49,7 +49,7 @@ export const Review = ({ review }) => {
             </>}
             <Images 
                 images={review?.review_image}
-                service={review}
+                review={review}
             />
         </>
         }
