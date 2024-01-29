@@ -3,6 +3,7 @@ import CreateUpdateForm from './CreateUpdateForm'
 import useAuth from '../hooks/useAuth'
 import Delete from './Delete'
 import Images from './Images'
+import ImageForm from './ImageForm'
 
 const Service = ({ service }) => {
 
@@ -18,6 +19,13 @@ const Service = ({ service }) => {
                 service={service}
                 setEdit={setEdit}
             />
+            <Images 
+                images={service?.service_image}
+                service={service}
+            />
+            <ImageForm 
+                id={service.id}
+            />
         </>
         :
         <>
@@ -25,7 +33,7 @@ const Service = ({ service }) => {
             <p>{service.description}</p>
             <Images 
                 images={service?.service_image}
-                title={service.title}
+                service={service}
             />
             {user && 
             <>

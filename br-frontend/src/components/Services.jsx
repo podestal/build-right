@@ -25,7 +25,6 @@ const Services = () => {
             />
         ))}
         <CreateUpdateForm />
-        <ImageForm />
     </div>
   )
 }

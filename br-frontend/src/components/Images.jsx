@@ -1,14 +1,14 @@
 import React from 'react'
 import Image from './image'
 
-const Images = ({ images, title }) => {
+const Images = ({ images, service }) => {
   return (
     <div>
         {images.map(img => (
             <Image 
                 key={img.id} 
                 image={img}
-                title={title}
+                service={service}
             />
         ))}
     </div>

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { uploadServiceImage } from '../api/api'
 import useMutate from '../hooks/useMutate'
 
-const ImageForm = () => {
+const ImageForm = ({ id }) => {
 
     const [img, setImg] = useState(null)
     const {mutate: uploadImg} = useMutate(uploadServiceImage, '')
@@ -12,7 +12,7 @@ const ImageForm = () => {
         const formData = new FormData()
         formData.append('image', img)
         console.log(img)
-        uploadImg({ id:2, img:formData })
+        uploadImg({ id, img:formData })
     }
 
   return (

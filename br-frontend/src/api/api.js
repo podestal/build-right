@@ -84,6 +84,8 @@ export const uploadServiceImage = data => baseAxios.post(`${SERVICES}${data.id}/
 .then(res => res.data)
 .catch(err => err)
 
+export const deleteServiceImage = data => baseAxios.delete(`${SERVICES}${data.serviceId}/images/${data.imageId}/`)
+
 // AUTH
 
 export const login = data => baseAxios.post(LOGIN, data.credentials)

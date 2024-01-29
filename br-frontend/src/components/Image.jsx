@@ -1,8 +1,21 @@
 import React from 'react'
+import Delete from './Delete'
 
-const Image = ({ image, title }) => {
+const Image = ({ image, service }) => {
+
+    const serviceImage = {
+        serviceId : service.id,
+        imageId : image.id
+    }
+
   return (
-    <img src={image.image} alt={`${title}-${image.id}`} />
+    <div>
+        {console.log(service)}
+        <img src={image.image} alt={`${service.title}-${image.id}`} />
+        <Delete 
+            serviceImage={serviceImage}
+        />
+    </div>
   )
 }
 
