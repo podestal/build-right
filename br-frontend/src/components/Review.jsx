@@ -3,6 +3,7 @@ import CreateUpdateForm from './CreateUpdateForm'
 import useAuth from '../hooks/useAuth'
 import Delete from './Delete'
 import Images from './Images'
+import ImageForm from './ImageForm'
 
 export const Review = ({ review }) => {
 
@@ -17,6 +18,20 @@ export const Review = ({ review }) => {
             <CreateUpdateForm 
                 review={review}
                 setEdit={setEdit}
+            />
+            <Images 
+                images={review?.review_image}
+                service={review}
+            />
+            <h2>Before</h2>
+            <ImageForm 
+                reviewId={review.id}
+                state='B'
+            />
+            <h2>After</h2>
+            <ImageForm 
+                reviewId={review.id}
+                state='A'
             />
         </>
         :

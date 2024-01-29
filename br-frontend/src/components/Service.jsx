@@ -24,7 +24,7 @@ const Service = ({ service }) => {
                 service={service}
             />
             <ImageForm 
-                id={service.id}
+                serviceId={service.id}
             />
         </>
         :

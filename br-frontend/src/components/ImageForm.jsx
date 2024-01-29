@@ -1,18 +1,25 @@
 import React, { useState } from 'react'
-import { uploadServiceImage } from '../api/api'
+import { uploadServiceImage, uploadReviewImage } from '../api/api'
 import useMutate from '../hooks/useMutate'
 
-const ImageForm = ({ id }) => {
+const ImageForm = ({ serviceId, reviewId, state }) => {
 
     const [img, setImg] = useState(null)
-    const {mutate: uploadImg} = useMutate(uploadServiceImage, '')
+    const {mutate: createServiceImg} = useMutate(uploadServiceImage, '')
+    const {mutate: createReviewImg} = useMutate(uploadReviewImage, '')
 
     const handleSubmit = e => {
         e.preventDefault()
         const formData = new FormData()
         formData.append('image', img)
-        console.log(img)
-        uploadImg({ id, img:formData })
+        console.log('img', img)
+        if (serviceId) {
+            createServiceImg({ serviceId, img:formData })
+        }
+        else if (reviewId) {
+            console.log('review id', reviewId);
+            createReviewImg({ reviewId, img:{image:img, state} })
+        }
     }
 
   return (

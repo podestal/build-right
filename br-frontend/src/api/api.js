@@ -78,13 +78,19 @@ export const deleteRequest = data => baseAxios.delete(`${REQUESTS}${data.id}/`)
 
 // IMAGES
 
-export const uploadServiceImage = data => baseAxios.post(`${SERVICES}${data.id}/images/`, data.img, {
+export const uploadServiceImage = data => baseAxios.post(`${SERVICES}${data.serviceId}/images/`, data.img, {
     headers: { 'Content-Type': 'multipart/form-data' }
 })
 .then(res => res.data)
 .catch(err => err)
 
 export const deleteServiceImage = data => baseAxios.delete(`${SERVICES}${data.serviceId}/images/${data.imageId}/`)
+
+export const uploadReviewImage = data => baseAxios.post(`${REVIEWS}${data.reviewId}/images/`, data.img, {
+    headers: { 'Content-Type': 'multipart/form-data' }
+})
+.then(res => res.data)
+.catch(err => err)
 
 // AUTH
 
