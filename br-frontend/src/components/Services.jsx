@@ -3,6 +3,7 @@ import { getServices } from '../api/api'
 import { useQuery } from '@tanstack/react-query'
 import Service from './Service'
 import CreateUpdateForm from './CreateUpdateForm'
+import ImageForm from './ImageForm'
 
 const Services = () => {
 
@@ -24,6 +25,7 @@ const Services = () => {
             />
         ))}
         <CreateUpdateForm />
+        <ImageForm />
     </div>
   )
 }

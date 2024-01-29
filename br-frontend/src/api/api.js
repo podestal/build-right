@@ -76,6 +76,14 @@ export const updateRequest = data => baseAxios.patch(`${REQUESTS}${data.id}/`, d
 
 export const deleteRequest = data => baseAxios.delete(`${REQUESTS}${data.id}/`)
 
+// IMAGES
+
+export const uploadServiceImage = data => baseAxios.post(`${SERVICES}${data.id}/images/`, data.img, {
+    headers: { 'Content-Type': 'multipart/form-data' }
+})
+.then(res => res.data)
+.catch(err => err)
+
 // AUTH
 
 export const login = data => baseAxios.post(LOGIN, data.credentials)
