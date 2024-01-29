@@ -14,10 +14,10 @@ const Delete = ({ review, service, access, request }) => {
           requestDelete({ id: request.id })
         }
         if (service) {
-            serviceDelete({ id: service.id, access: access })
+          serviceDelete({ id: service.id, access: access })
         } 
         if (review) {
-            reviewDelete({ id: review.id, access: access })
+          reviewDelete({ id: review.id, access: access })
         }
     }
 

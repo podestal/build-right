@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import CreateUpdateForm from './CreateUpdateForm'
 import useAuth from '../hooks/useAuth'
 import Delete from './Delete'
+import Images from './Images'
 
 const Service = ({ service }) => {
 
@@ -22,6 +23,10 @@ const Service = ({ service }) => {
         <>
             <h3>{service.title}</h3>
             <p>{service.description}</p>
+            <Images 
+                images={service?.service_image}
+                title={service.title}
+            />
             {user && 
             <>
                 <button onClick={e => setEdit(prev => !prev)}>Edit</button>

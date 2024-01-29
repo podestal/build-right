@@ -1,21 +1,12 @@
 import React, { useState } from 'react'
 import CreateUpdateForm from './CreateUpdateForm'
-import { deleteReview } from '../api/api'
 import useAuth from '../hooks/useAuth'
-import useMutate from '../hooks/useMutate'
 import Delete from './Delete'
 
 export const Review = ({ review }) => {
 
     const [edit, setEdit] = useState(false)
     const {user} = useAuth()
-
-    const {mutate} = useMutate(deleteReview, 'reviews')
-
-
-    const handleDelete = () => {
-        mutate({ id: review.id, access: user.access })
-    }
 
   return (
     <div>

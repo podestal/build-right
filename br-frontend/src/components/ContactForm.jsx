@@ -5,6 +5,7 @@ import { createRequest } from '../api/api'
 const ContactForm = () => {
 
     const [name, setName] = useState("")
+    const [title, setTitle] = useState("")
     const [email, setEmail] = useState("")
     const [phone, setPhone] = useState("")
     const [message, setMessage] = useState("")
@@ -18,6 +19,7 @@ const ContactForm = () => {
             email,
             phone,
             message,
+            title,
             completed: false
         }})
     }
@@ -41,6 +43,12 @@ const ContactForm = () => {
             placeholder='Your phone number'
             value={phone}
             onChange={e => setPhone(e.target.value)}
+        />
+        <input 
+            type='text'
+            placeholder='Your Subject'
+            value={title}
+            onChange={e => setTitle(e.target.value)}
         />
         <textarea 
             placeholder='Your Message'

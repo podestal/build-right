@@ -9,9 +9,15 @@ const Contact = () => {
 
   return (
     <div>
-        {user && <Requests />}
-        <h2>Send us a message and we will contact you in the next 24 hrs</h2>
-        <ContactForm />
+        {user 
+        ?
+        <Requests />
+        :
+        <>
+            <h2>Send us a message and we will contact you in the next 24 hrs</h2>
+            <ContactForm />
+        </>
+        }
     </div>
   )
 }
