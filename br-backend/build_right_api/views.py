@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from rest_framework.filters import OrderingFilter
 from . import models
 from . import serializers
 
@@ -42,4 +43,6 @@ class RequestViewSet(ModelViewSet):
     queryset = models.Request.objects.all()
     serializer_class = serializers.RequestSerializer
     http_method_names = ['get', 'post', 'patch', 'delete']
+    filter_backends = [OrderingFilter]
+    ordering_fields = ['completed']
 

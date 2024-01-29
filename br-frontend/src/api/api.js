@@ -62,7 +62,7 @@ export const deleteReview = data => baseAxios.delete(`${REVIEWS}${data.id}/`, {
 
 // CONTACT
 
-export const getRequests = () => baseAxios.get(REQUESTS)
+export const getRequests = () => baseAxios.get(`${REQUESTS}?ordering=completed`)
                                             .then(res => res.data)
                                             .catch(err => err)
 

@@ -8,23 +8,9 @@ const Image = ({ image, service, review }) => {
 
   return (
     <div>
-        {console.log('from img', review)}
-        {image?.state 
+        {/* {image?.state 
         ?
         <>
-            {/* <h2>Before</h2> */}
-            {/* {image?.state == 'B' && <img src={image.image} alt={service ? `${service.title}-${image.id}` : `${review.title}-${image.id}`} />}
-            {user &&
-            <Delete 
-                serviceImage={serviceImage}
-            />} */}
-
-            {/* <h2>After</h2> */}
-            {/* {image?.state == 'A' && <img src={image.image} alt={service ? `${service.title}-${image.id}` : `${review.title}-${image.id}`} />}
-            {user &&
-            <Delete 
-                serviceImage={serviceImage}
-            />} */}
             <h2>{image.state == 'B' ? 'Before' : 'After'}</h2>
             <img src={image.image} alt={service ? `${service.title}-${image.id}` : `${review.title}-${image.id}`} />
             {user &&
@@ -45,7 +31,15 @@ const Image = ({ image, service, review }) => {
                 imageId={image.id}
             />}
         </>
-        }
+        } */}
+        {image?.state &&  <h2>{image.state == 'B' ? 'Before' : 'After'}</h2>}
+        <img src={image.image} alt={service ? `${service.title}-${image.id}` : `${review.title}-${image.id}`} />
+            {user &&
+            <Delete 
+                reviewId={review?.id}
+                serviceId={service?.id}
+                imageId={image.id}
+            />}
     </div>
   )
 }
