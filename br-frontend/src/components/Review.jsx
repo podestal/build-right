@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import CreateUpdateForm from './CreateUpdateForm'
 import useAuth from '../hooks/useAuth'
 import Delete from './Delete'
+import Images from './Images'
 
 export const Review = ({ review }) => {
 
@@ -31,6 +32,10 @@ export const Review = ({ review }) => {
                     access={user.access}
                 />
             </>}
+            <Images 
+                images={review?.review_image}
+                service={review}
+            />
         </>
         }
     </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from './image'
 
-const Images = ({ images, service }) => {
+const Images = ({ images, service, review }) => {
   return (
     <div>
         {images.map(img => (
@@ -9,6 +9,7 @@ const Images = ({ images, service }) => {
                 key={img.id} 
                 image={img}
                 service={service}
+                review={review}
             />
         ))}
     </div>

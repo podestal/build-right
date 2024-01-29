@@ -29,9 +29,12 @@ class ReviewImageSerializer(serializers.ModelSerializer):
         return models.ReviewImage.objects.create(review_id=review_id, **validated_data)
 
 class ReviewSerializer(serializers.ModelSerializer):
+
+    review_image = ReviewImageSerializer(many=True)
+
     class Meta:
         model = models.Review
-        fields = '__all__'
+        fields = ['id', 'customer_name', 'title', 'description', 'review_image']
 
 class RequestSerializer(serializers.ModelSerializer):
     class Meta:

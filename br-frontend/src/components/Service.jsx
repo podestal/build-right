@@ -31,10 +31,6 @@ const Service = ({ service }) => {
         <>
             <h3>{service.title}</h3>
             <p>{service.description}</p>
-            <Images 
-                images={service?.service_image}
-                service={service}
-            />
             {user && 
             <>
                 <button onClick={e => setEdit(prev => !prev)}>Edit</button>
@@ -43,6 +39,10 @@ const Service = ({ service }) => {
                     access={user.access}
                 />
             </>}
+            <Images 
+                images={service?.service_image}
+                service={service}
+            />
         </>
         }
     </div>

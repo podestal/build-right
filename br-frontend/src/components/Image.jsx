@@ -1,7 +1,10 @@
 import React from 'react'
 import Delete from './Delete'
+import useAuth from '../hooks/useAuth'
 
-const Image = ({ image, service }) => {
+const Image = ({ image, service, review }) => {
+
+    const {user} = useAuth()
 
     const serviceImage = {
         serviceId : service.id,
@@ -11,10 +14,11 @@ const Image = ({ image, service }) => {
   return (
     <div>
         {console.log(service)}
-        <img src={image.image} alt={`${service.title}-${image.id}`} />
-        <Delete 
-            serviceImage={serviceImage}
-        />
+        <img src={image.image} alt={service ? `${service.title}-${image.id}` : `${review.title}-${image.id}`} />
+        {user &&
+            <Delete 
+                serviceImage={serviceImage}
+            />}
     </div>
   )
 }

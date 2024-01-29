@@ -3,9 +3,11 @@ import { getServices } from '../api/api'
 import { useQuery } from '@tanstack/react-query'
 import Service from './Service'
 import CreateUpdateForm from './CreateUpdateForm'
-import ImageForm from './ImageForm'
+import useAuth from '../hooks/useAuth'
 
 const Services = () => {
+
+    const {user} = useAuth()
 
     const {data: services, isLoading, isError, error} = useQuery({
         queryKey: ['services'],
@@ -24,7 +26,7 @@ const Services = () => {
                 service={service}
             />
         ))}
-        <CreateUpdateForm />
+        {user && <CreateUpdateForm />}
     </div>
   )
 }
