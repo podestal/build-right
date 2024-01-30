@@ -1,8 +1,7 @@
-import React from 'react'
 import { useMutation } from '@tanstack/react-query'
 import { useQueryClient } from '@tanstack/react-query'
 
-const useMutate = (apiFunction, queryKey) => {
+const useMutate = (apiFunction, queryKey, setSuccess, setError, setDisplayMsg) => {
 
     const queryClient = useQueryClient()
 
@@ -10,8 +9,13 @@ const useMutate = (apiFunction, queryKey) => {
     mutationFn: data => apiFunction(data),
     onSuccess: res => {
         queryClient.invalidateQueries([queryKey])
-        console.log(res)
-    }
+        if (res.message) {
+          setError(true)
+          setDisplayMsg(res.message)
+        } else {
+          setSuccess(true)
+        }
+    },
   })
 }
 

@@ -9,9 +9,9 @@ const Header = () => {
 
   return (
     <header className='header'>
-        <Link to={'/'}><h1>LOGO</h1></Link>
+        <Link className='header-logo' to={'/home  '}><h1>LOGO</h1></Link>
         <nav className='header-nav'>
-            <Link to={'/'}>Home</Link>
+            <Link to={'/home'}>Home</Link>
             <Link to={'/about'}>About</Link>
             <Link to={'/testimonials'}>Testimonials</Link>
             <Link to={'/services'}>Services</Link>

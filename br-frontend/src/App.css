@@ -12,31 +12,60 @@ a {
   color: #fff;
 }
 
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+.successful-message {
+  background-color: #70e000;
+  color: #fff;
+  padding: .5rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 15px;
+}
+
+.error-message {
+  background-color: #c1121f;
+  color: #370617;
+  padding: .5rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 15px;
+}
+
 .btn-primary {
   color: #fff;
   background-color: #c1121f;
   padding: 1.4rem;
   border-radius: 15px;
   font-size: 1.4rem;
-  max-width: 200px;
+  max-width: 300px;
+  border: none;
 }
 
 .btn-primary:hover {
   background-color: #780000;
 }
 
+.main-container {
+  width: 85%;
+  margin: auto;
+}
+
 .header {
   display: flex;
   justify-content: space-evenly;
   height: 5rem;
-  background-color: black;
+  /* background-color: black; */
   align-items: center;
   color: #fff;
+  position: relative;
 }
 
-.header h1 {
-  font-size: 3rem;
+.header .header-logo {
+  font-size: 25px;
   font-weight: bold;
+  margin: 0 auto;
 }
 
 .header a:hover {
@@ -68,7 +97,7 @@ a {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), 
   url("./assets/imgs/main-hero.jpg") 
   no-repeat center center/cover;
-  height: 89vh;
+  height: 100vh;
   width: 100%;
   position: relative;
   text-align: center;
@@ -84,16 +113,59 @@ a {
   justify-content: space-around;
 }
 
-.hero h1 {
+.hero .hero-content h1 {
   color: #fff;
   font-size: 3.5rem;
   width: 60%;
   line-height: 5rem;
-  margin: 2rem;
 }
 
-.hero a {
+.hero .hero-content a {
   width: 25%;
-  margin: auto;
   text-align: center;
+}
+
+/* Contact */
+
+.contact-container .contact-title {
+  text-align: center;
+  font-size: 2rem;
+  margin: 2rem auto;  
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 3rem auto;
+  align-items: center;
+}
+
+.contact-form input {
+  margin: 1rem;
+  height: 2.5rem;
+  width: 50%;
+  border-radius: 15px;
+  text-align: center;
+  border: none;
+  font-size: 1.1rem;
+}
+
+.contact-form textarea {
+  margin: 1rem;
+  margin-bottom: 2rem;
+  height: 10rem;
+  width: 50%;
+  border-radius: 15px;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+
+.contact-form button {
+  width: 30%;
+  padding: 0.8rem;
+  margin: 2rem auto;
+  font-size: 1.2rem;
+  margin: auto;
 }

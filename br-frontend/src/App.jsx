@@ -8,16 +8,22 @@ import ServicesPage from './pages/ServicesPage'
 import Login from './pages/Login'
 import PersistLogin from './components/PersistLogin'
 import Contact from './pages/Contact'
+import { useEffect } from 'react'
 
 
 const App = () => {
 
+  const url = window.location.href
+
+  useEffect(() => {
+    console.log(url)
+  }, [url])
+
   return (
     <div>
-      <Header />
       <Routes>
         <Route element={<PersistLogin />}>
-          <Route path='' element={<Home />}/>
+          <Route path='home' element={<Home />}/>
           <Route path='about' element={<About />}/>
           <Route path='testimonials' element={<Testimonials />}/>
           <Route path='services' element={<ServicesPage />}/>
