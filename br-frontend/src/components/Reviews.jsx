@@ -36,7 +36,6 @@ const Reviews = () => {
                 />
             }
         })}
-        {user && <CreateUpdateForm />}
     </div>
   )
 }

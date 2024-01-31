@@ -23,6 +23,11 @@ p {
   font-weight: bold;
 }
 
+img {
+  width: 300px;
+  height: 200px;
+}
+
 .left {
   text-align: left;
 }
@@ -306,9 +311,40 @@ p {
   text-align: center;
 }
 
+.review-container h2 {
+  font-size: 3rem;
+  margin: 1.7rem auto;
+}
 
+.review-container h3 {
+  font-size: 1.7rem;
+  margin-bottom: 1.4rem;
+}
+
+.review-container p {
+  margin-bottom: 1.4rem;
+}
 
 .review-container .images-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+}
+
+.review-container .review-img {
+  width: 300px;
+  height: 250px;
+}
+
+/* Footer */
+
+.footer {
+  display: flex;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.footer p {
+  font-size: 1rem;
 }

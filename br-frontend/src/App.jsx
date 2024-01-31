@@ -10,6 +10,7 @@ import PersistLogin from './components/PersistLogin'
 import Contact from './pages/Contact'
 import { useEffect } from 'react'
 import Process from './pages/Process'
+import Footer from './components/Footer'
 
 
 const App = () => {
@@ -21,7 +22,7 @@ const App = () => {
   }, [url])
 
   return (
-    <div>
+    <div className='app-container'>
       <Routes>
         <Route element={<PersistLogin />}>
           <Route path='home' element={<Home />}/>
@@ -33,6 +34,7 @@ const App = () => {
           <Route path='process' element={<Process />}/>
         </Route>
       </Routes>
+      <Footer />
     </div>
   )
 }
