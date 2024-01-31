@@ -16,8 +16,10 @@ const Home = () => {
           </dir>
         </div>
       </div>
-      <Services />
-      <Reviews />
+      <div className='main-container'>
+        <Services />
+        <Reviews />
+      </div>
     </>
 
   )

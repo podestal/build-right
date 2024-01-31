@@ -194,18 +194,27 @@ img {
 /* Service */
 
 .home-service-container {
-  width: 65%;
   margin: auto;
   text-align: center;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 350px;
 }
 
-.home-service-container h3 {
+.home-service-container .home-service-info {
+  text-align: left;
+  width: 95%;
+  margin-right: 2rem;
+}
+
+.home-service-container .home-service-info h3 {
   font-size: 3rem;
   /* color: #c1121f; */
   font-weight:900;
 }
 
-.home-service-container p {
+.home-service-container .home-service-info p {
   margin: 1.5rem 0;
 }
 
@@ -347,4 +356,27 @@ img {
 
 .footer p {
   font-size: 1rem;
+}
+
+/* Carousel */
+
+.rec-dot_active {
+  background-color: #c1121f;
+}
+
+.rec.rec-arrow-left,
+.rec.rec-arrow-right {
+  color: #fff;
+}
+
+button.iWchow.rec.rec-arrow.rec-arrow-left:hover,
+button.iWchow.rec.rec-arrow.rec-arrow-right:hover,
+button.iWchow.rec.rec-arrow.rec-arrow-left:focus,
+button.iWchow.rec.rec-arrow.rec-arrow-right:focus {
+  background-color: #c1121f;
+}
+
+button.rec-dot_active {
+  background-color: #c1121f;
+  box-shadow: none;
 }
