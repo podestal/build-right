@@ -17,6 +17,14 @@ body {
   color: #fff;
 }
 
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
 .successful-message {
   background-color: #70e000;
   color: #fff;
@@ -58,7 +66,6 @@ body {
   height: 5rem;
   /* background-color: black; */
   align-items: center;
-  color: #fff;
   position: relative;
 }
 
@@ -66,6 +73,7 @@ body {
   font-size: 25px;
   font-weight: bold;
   margin: 0 auto;
+
 }
 
 .header a:hover {
@@ -82,7 +90,7 @@ body {
 }
 
 .header .header-nav {
-  width: 60%;
+  width: 80%;
   text-align: center;
 }
 
@@ -208,3 +216,79 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
+
+/* Process */
+
+.process-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.process-container .process-item {
+  margin: auto;
+  margin-top: 3rem;
+  width: 60%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+}
+
+.process-container .process-item p {
+  margin: 1.5rem;
+  font-size: 3rem;
+}
+
+.process-container .initial {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), 
+  url("./assets/imgs/consultation.jpg") 
+  no-repeat center center/cover;
+  justify-content: end;
+}
+
+.process-container .layout {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), 
+  url("./assets/imgs/layout.jpg") 
+  no-repeat center center/cover;
+}
+
+.process-container .documents {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), 
+  url("./assets/imgs/documents.jpg") 
+  no-repeat center center/cover;
+  justify-content: end;
+}
+
+.process-container .material {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), 
+  url("./assets/imgs/material.jpg") 
+  no-repeat center center/cover;
+}
+
+.process-container .construction {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), 
+  url("./assets/imgs/construction.jpg") 
+  no-repeat center center/cover;
+  justify-content: end;
+}
+
+.process-container .walkthrough {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), 
+  url("./assets/imgs/walkthrough.jpg") 
+  no-repeat center center/cover;
+}
+
+.process-container .cleaning {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), 
+  url("./assets/imgs/cleaning.jpg") 
+  no-repeat center center/cover;
+  justify-content: end;
+}
+
+.process-container .celebrate {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), 
+  url("./assets/imgs/celebrate.jpg") 
+  no-repeat center center/cover;
+}
+

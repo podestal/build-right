@@ -9,6 +9,7 @@ import Login from './pages/Login'
 import PersistLogin from './components/PersistLogin'
 import Contact from './pages/Contact'
 import { useEffect } from 'react'
+import Process from './pages/Process'
 
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
           <Route path='services' element={<ServicesPage />}/>
           <Route path='login' element={<Login />}/>
           <Route path='contact' element={<Contact />}/>
+          <Route path='process' element={<Process />}/>
         </Route>
       </Routes>
     </div>

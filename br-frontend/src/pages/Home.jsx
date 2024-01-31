@@ -15,6 +15,7 @@ const Home = () => {
           </dir>
         </div>
       </div>
+
       <Services />
     </>
 
