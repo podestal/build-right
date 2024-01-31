@@ -4,10 +4,13 @@ import { useQuery } from '@tanstack/react-query'
 import Service from './Service'
 import CreateUpdateForm from './CreateUpdateForm'
 import useAuth from '../hooks/useAuth'
+import HomeService from './HomeService'
 
 const Services = () => {
 
     const {user} = useAuth()
+    const url = window.location.href
+    const route = url.split('/')[(url.split('/')).length - 1]
 
     const {data: services, isLoading, isError, error} = useQuery({
         queryKey: ['services'],
@@ -20,13 +23,20 @@ const Services = () => {
 
   return (
     <div>
-        {services.map(service => (
-            <Service 
-                key={service.id}
-                service={service}
-            />
-        ))}
-        {user && <CreateUpdateForm />}
+        <h2>Services</h2>
+        {services.map(service => {
+            if (route == 'services') {
+                return <Service 
+                    key={service.id}
+                    service={service}
+                />
+            } else {
+                return <HomeService 
+                    key={service.id}
+                    service={service}
+                />
+            }
+    })}
     </div>
   )
 }

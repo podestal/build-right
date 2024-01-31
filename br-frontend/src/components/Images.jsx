@@ -3,7 +3,7 @@ import Image from './image'
 
 const Images = ({ images, service, review }) => {
   return (
-    <div>
+    <div className='images-container'>
         {images.map(img => (
             <Image 
                 key={img.id} 

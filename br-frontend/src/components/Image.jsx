@@ -33,7 +33,10 @@ const Image = ({ image, service, review }) => {
         </>
         } */}
         {image?.state &&  <h2>{image.state == 'B' ? 'Before' : 'After'}</h2>}
-        <img src={image.image} alt={service ? `${service.title}-${image.id}` : `${review.title}-${image.id}`} />
+        <img 
+            src={image.image} alt={service ? `${service.title}-${image.id}` : `${review.title}-${image.id}`} 
+            className={service ? 'service-img' : 'review-img'}
+        />
             {user &&
             <Delete 
                 reviewId={review?.id}

@@ -169,3 +169,42 @@ body {
   font-size: 1.2rem;
   margin: auto;
 }
+
+/* Service */
+
+.home-service-container {
+  width: 65%;
+  margin: auto;
+  text-align: center;
+}
+
+.home-service-container h3 {
+  font-size: 3rem;
+  color: #c1121f;
+  font-weight:900;
+}
+
+.home-service-container p {
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  margin: 1.5rem 0;
+}
+
+.home-service-container .service-img,
+.service-container .service-img {
+  height: 350px;
+  width: 500px;
+  object-fit: cover;
+  object-position: center center;
+  align-self: center;
+  border-radius: 5px;
+}
+
+.service-container .service-img {
+  margin: 2rem;
+}
+
+.service-container .images-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}

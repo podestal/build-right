@@ -11,7 +11,7 @@ const Service = ({ service }) => {
     const {user} = useAuth()
 
   return (
-    <div>
+    <div className='service-container'>
         {edit 
         ? 
         <>

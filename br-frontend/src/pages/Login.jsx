@@ -21,7 +21,7 @@ const Login = () => {
             localStorage.setItem('access', data.access)
             localStorage.setItem('refresh', data.refresh)
             userMutation({ acess:data.access })
-            navigate('/')
+            navigate('/home')
         }
     })
 
