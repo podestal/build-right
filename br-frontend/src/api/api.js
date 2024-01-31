@@ -15,8 +15,6 @@ const baseAxios = axios.create({
 // SERVICES
 
 export const getServices = () => baseAxios.get(SERVICES)
-                                            .then(res => res.data)
-                                            .catch(err => err) 
 
 export const createService = data => baseAxios.post(SERVICES, data.service, {
     headers: { Authorization: `JWT ${data.access}` }
@@ -39,8 +37,7 @@ export const deleteService = data => baseAxios.delete(`${SERVICES}${data.id}/`, 
 // REVIEWS
 
 export const getReviews = () => baseAxios.get(REVIEWS)
-                                            .then(res => res.data)
-                                            .catch(err => err) 
+        
 
 export const createReview = data => baseAxios.post(REVIEWS, data.review, {
     headers: { Authorization: `JWT ${data.access}` }

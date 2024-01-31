@@ -2,13 +2,10 @@ import React from 'react'
 import { getServices } from '../api/api'
 import { useQuery } from '@tanstack/react-query'
 import Service from './Service'
-import CreateUpdateForm from './CreateUpdateForm'
-import useAuth from '../hooks/useAuth'
 import HomeService from './HomeService'
 
 const Services = () => {
 
-    const {user} = useAuth()
     const url = window.location.href
     const route = url.split('/')[(url.split('/')).length - 1]
 
@@ -24,7 +21,7 @@ const Services = () => {
   return (
     <div>
         <h2>Services</h2>
-        {services.map(service => {
+        {services.data.map(service => {
             if (route == 'services') {
                 return <Service 
                     key={service.id}
@@ -36,7 +33,7 @@ const Services = () => {
                     service={service}
                 />
             }
-    })}
+        })}
     </div>
   )
 }

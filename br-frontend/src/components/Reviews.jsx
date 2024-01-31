@@ -23,7 +23,7 @@ const Reviews = () => {
 
   return (
     <div className='main-container'>
-        {reviews && reviews.map(review => {
+        {reviews && reviews.data.map(review => {
             if (route == 'testimonials') {
                 return <Review 
                 key={review.id}
