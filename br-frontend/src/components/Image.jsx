@@ -7,7 +7,7 @@ const Image = ({ image, service, review }) => {
     const {user} = useAuth()
 
   return (
-    <div>
+    <div className='image-container'>
         {/* {image?.state 
         ?
         <>
