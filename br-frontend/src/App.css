@@ -194,7 +194,7 @@ img {
 /* Service */
 
 .home-service-container {
-  margin: auto;
+  margin: 2.5rem auto;
   text-align: center;
   display: flex;
   align-items: center;
@@ -204,7 +204,7 @@ img {
 
 .home-service-container .home-service-info {
   text-align: left;
-  width: 95%;
+  width: 85%;
   margin-right: 2rem;
 }
 
@@ -216,6 +216,12 @@ img {
 
 .home-service-container .home-service-info p {
   margin: 1.5rem 0;
+}
+
+.home-service-container .carousel-img {
+  width: 450px;
+  height: 350px;
+  border-radius: 15px;
 }
 
 .home-service-container .service-img,
