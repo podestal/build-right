@@ -34,7 +34,6 @@ const Login = () => {
 
   return (
     <div className='main-container'>
-        <Header />
         <form onSubmit={handleLogin}>
             <input 
                 type='text'

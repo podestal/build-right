@@ -5,7 +5,6 @@ import Separator from '../components/Separator'
 const About = () => {
   return (
       <div className='main-container'> 
-        <Header />
         <Separator 
           title={'Who we are?'}
         />

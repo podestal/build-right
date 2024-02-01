@@ -5,7 +5,6 @@ import Separator from '../components/Separator'
 const Process = () => {
   return (
     <div className='main-container '>
-        <Header />
         <section className='process-container'>
             <Separator 
                 title={'The Process'}

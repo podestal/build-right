@@ -10,7 +10,6 @@ const Testimonials = () => {
 
   return (
     <div className='main-container'>
-        <Header />
         <Reviews />
         {user && <CreateUpdateForm />} 
     </div>

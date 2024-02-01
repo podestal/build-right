@@ -23,6 +23,7 @@ const App = () => {
 
   return (
     <div className='app-container'>
+      <Header />
       <Routes>
         <Route element={<PersistLogin />}>
           <Route path='home' element={<Home />}/>

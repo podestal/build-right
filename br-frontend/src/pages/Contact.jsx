@@ -10,7 +10,6 @@ const Contact = () => {
 
   return (
     <div className='main-container contact-container'>
-        <Header />
         {user 
         ?
         <Requests />

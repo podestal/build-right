@@ -10,7 +10,6 @@ const ServicesPage = () => {
 
   return (
     <div className='main-container'>
-        <Header />
         <Services />
         {user && <CreateUpdateForm />}
     </div>
