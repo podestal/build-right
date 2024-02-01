@@ -28,6 +28,21 @@ img {
   height: 200px;
 }
 
+button {
+  border: none;
+  padding: 0.8rem 1.3rem;
+  border-radius: 15px;
+  margin: auto;
+  background-color: blue;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.delete-btn {
+  background-color: #c1121f;
+  margin: 2rem auto;
+}
+
 .left {
   text-align: left;
 }
@@ -217,6 +232,36 @@ img {
   margin: 2rem auto;
   font-size: 1.2rem;
   margin: auto;
+}
+
+/* Request */
+
+.request-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: 5rem auto;
+}
+
+.request-container .modify-request-container {
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+.request-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.request-container form {
+  text-align: center;
+  display: inline;
+  margin: 1.5rem;
+}
+
+.request-container form input {
+  margin: 0 2rem;
 }
 
 /* Service */

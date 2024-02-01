@@ -15,25 +15,29 @@ const Request = ({ request }) => {
     }
 
   return (
-    <div>
+    <div className='request-container'>
         <h2>{request.title}</h2>
         <p>{request.message}</p>
         <p>Customer: {request?.name}</p>
         <p>Description: {request?.description}</p>
         <p>Email: {request?.email}</p>
         <p>Phone: {request?.phone}</p>
-        <form onSubmit={handleSubmit}>
-            <input 
-                type='checkbox'
-                value={completed}
-                onChange={e => setCompleted(!completed)}
-                checked={completed}
+        <div className='modify-request-container'>
+            <form onSubmit={handleSubmit}>
+                <label htmlFor="checked">Checked</label>
+                <input 
+                    id='checked'
+                    type='checkbox'
+                    value={completed}
+                    onChange={e => setCompleted(!completed)}
+                    checked={completed}
+                />
+                <button>Update</button>
+            </form>
+            <Delete 
+                request={request}
             />
-            <button>Update</button>
-        </form>
-        <Delete 
-            request={request}
-        />
+        </div>
     </div>
   )
 }

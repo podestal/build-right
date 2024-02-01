@@ -23,13 +23,14 @@ const Reviews = () => {
 
   return (
     <div>
-        <Carousel>
-            {route == 'home' && reviews.data.map(review => (
-                <HomeReview 
-                    key={review.id}
-                    review={review}
-                />))}
-        </Carousel>
+        {route == 'home' &&        
+            <Carousel>
+                {reviews.data.map(review => (
+                    <HomeReview 
+                        key={review.id}
+                        review={review}
+                    />))}
+            </Carousel>}
         {route == 'testimonials' && reviews.data.map(review => (
                 <Review 
                     key={review.id}

@@ -30,7 +30,7 @@ const Delete = ({ review, service, access, request, serviceId, reviewId, imageId
     }
 
   return (
-    <button onClick={handleDelete}>Delete</button>
+    <button className='delete-btn' onClick={handleDelete}>Delete</button>
   )
 }
 
