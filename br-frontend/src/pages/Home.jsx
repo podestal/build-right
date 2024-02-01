@@ -22,6 +22,10 @@ const Home = () => {
           title={'Services'}
         />
         <Services />
+        {/* <Separator 
+          title={'Our Vision'}
+        />
+        <p>Allow Buffalo Home Builder to be your partner in transforming your space into a functional and captivating environment. Trust us to deliver excellence, quality, and professionalism every step of the way.</p> */}
         <Separator 
           title={'Testimonials'}
         />
