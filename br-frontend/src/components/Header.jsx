@@ -9,7 +9,7 @@ const Header = () => {
     const {user} = useAuth()
 
   return (
-    <header className='header'>
+    <header className='header' id='header'>
         <Link className='header-logo' to={'/home  '}><img src={logo} alt="buffalo logo" /></Link>
         {user 
         ?

@@ -22,7 +22,7 @@ const Reviews = () => {
       if (isError) return <p>{error.message}</p>
 
   return (
-    <div className='main-container'>
+    <div>
         <Carousel>
             {route == 'home' && reviews.data.map(review => (
                 <HomeReview 

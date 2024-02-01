@@ -70,11 +70,26 @@ img {
 
 .main-container {
   width: 85%;
-  margin: 10rem auto;
+  margin: auto;
+  margin-top: 10rem ;
+
 }
+
+.scrolled-header {
+  background-color: #000;
+  transition: 0.4s ease-in-out;
+}
+
+.unscrolled-header {
+  background-color: rgba(0, 0, 0, 0);
+  transition: 0.4s ease-in-out;
+}
+
+
 
 .header {
   display: flex;
+  margin: auto;
   justify-content: space-evenly;
   height: 9rem;
   /* background-color: black; */
@@ -93,8 +108,8 @@ img {
 }
 
 .header .header-logo img {
-  width: 200px;
-  height: 90px;
+  width: 250px;
+  height: 120px;
 }
 
 .header a:hover {
@@ -111,13 +126,13 @@ img {
 }
 
 .header .header-nav {
-  width: 70%;
+  width: 60%;
   text-align: center;
 }
 
 .header .header-nav a {
   margin: 0 1.5rem;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 /* Hero */
@@ -135,7 +150,7 @@ img {
 
 .hero .hero-content {
   height: 100vh;
-  width: 60%;
+  width: 75%;
   margin: auto;
   padding-top: 5rem;
   display: flex;
@@ -262,6 +277,7 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: -3rem;
 }
 
 .process-container .process-item {
@@ -330,6 +346,8 @@ img {
   no-repeat center center/cover;
 }
 
+/* Review */
+
 .review-container {
   display: flex;
   flex-direction: column;
@@ -367,7 +385,7 @@ img {
 
 .footer {
   display: flex;
-  height: 60px;
+  height: 100px;
   justify-content: center;
   align-items: center;
   margin-top: 3rem;
