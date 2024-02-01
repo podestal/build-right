@@ -1,8 +1,8 @@
 import React from 'react'
 import Reviews from '../components/Reviews'
-import Header from '../components/Header'
 import useAuth from '../hooks/useAuth'
 import CreateUpdateForm from '../components/CreateUpdateForm'
+import Separator from '../components/Separator'
 
 const Testimonials = () => {
 
@@ -11,7 +11,13 @@ const Testimonials = () => {
   return (
     <div className='main-container'>
         <Reviews />
-        {user && <CreateUpdateForm />} 
+        {user &&          
+          <>
+            <Separator 
+              title={'Reviews Form'}
+            />
+            <CreateUpdateForm />
+          </>} 
     </div>
   )
 }

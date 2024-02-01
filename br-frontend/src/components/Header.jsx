@@ -20,8 +20,10 @@ const Header = () => {
             <Link to={'/services'}>Services</Link>
             <Link to={'/contact'}>Contact Us</Link>
           </nav>
-          <h2>Welcome {user?.first_name}</h2>
-          <Logout />
+          <div className='header-login'>
+            <h2>Welcome {user?.first_name}</h2>
+            <Logout />
+          </div>
         </>
         :
         <nav className='header-nav'>

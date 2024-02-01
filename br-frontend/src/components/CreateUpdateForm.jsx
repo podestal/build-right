@@ -44,7 +44,7 @@ const CreateUpdateForm = ({ review, setEdit, service }) => {
         }
     }
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='contact-form'>
         {route == 'testimonials' &&         
         <input 
             type='text'

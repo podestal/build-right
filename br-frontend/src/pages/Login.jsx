@@ -4,7 +4,7 @@ import { useMutation } from '@tanstack/react-query'
 import { useNavigate } from 'react-router-dom'
 import useUser from '../hooks/useUser'
 import useAuth from '../hooks/useAuth'
-import Header from '../components/Header'
+import Separator from '../components/Separator'
 
 
 const Login = () => {
@@ -34,7 +34,10 @@ const Login = () => {
 
   return (
     <div className='main-container'>
-        <form onSubmit={handleLogin}>
+        <Separator 
+            title={'Login'}
+        />
+        <form onSubmit={handleLogin} className='contact-form'>
             <input 
                 type='text'
                 placeholder='Username'

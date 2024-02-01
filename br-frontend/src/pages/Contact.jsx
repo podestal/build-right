@@ -2,7 +2,7 @@ import React from 'react'
 import ContactForm from '../components/ContactForm'
 import Requests from '../components/Requests'
 import useAuth from '../hooks/useAuth'
-import Header from '../components/Header'
+import Separator from '../components/Separator'
 
 const Contact = () => {
 
@@ -12,9 +12,19 @@ const Contact = () => {
     <div className='main-container contact-container'>
         {user 
         ?
-        <Requests />
+        <>
+          <Separator 
+            title={'Customer Info'}
+          />
+          <Requests />
+        </>
+
         :
         <>
+        <Separator 
+          title={'Contact Us'}
+        />
+        <h2 className='contact-title'>We can help you financing</h2>
         <h2 className='contact-title'>Send us a message and we will contact you in the next 24 hrs</h2>
         <ContactForm />
         </>
