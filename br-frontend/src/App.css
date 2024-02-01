@@ -76,7 +76,7 @@ img {
 .header {
   display: flex;
   justify-content: space-evenly;
-  height: 5rem;
+  height: 9rem;
   /* background-color: black; */
   align-items: center;
   position: relative;
@@ -86,7 +86,11 @@ img {
   font-size: 25px;
   font-weight: bold;
   margin: 0 auto;
+}
 
+.header .header-logo img {
+  width: 200px;
+  height: 90px;
 }
 
 .header a:hover {
@@ -103,7 +107,7 @@ img {
 }
 
 .header .header-nav {
-  width: 80%;
+  width: 70%;
   text-align: center;
 }
 

@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import useAuth from '../hooks/useAuth'
 import Logout from './Logout'
+import logo from '../assets/imgs/buffalo-logo.png'
 
 const Header = () => {
 
@@ -9,7 +10,7 @@ const Header = () => {
 
   return (
     <header className='header'>
-        <Link className='header-logo' to={'/home  '}><h1>LOGO</h1></Link>
+        <Link className='header-logo' to={'/home  '}><img src={logo} alt="buffalo logo" /></Link>
         {user 
         ?
         <>
