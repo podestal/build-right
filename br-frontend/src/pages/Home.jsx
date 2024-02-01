@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Header from '../components/Header'
 import Services from '../components/Services'
 import Reviews from '../components/Reviews'
+import Separator from '../components/Separator'
 
 const Home = () => {
   return (
@@ -17,7 +18,13 @@ const Home = () => {
         </div>
       </div>
       <div className='main-container'>
+        <Separator 
+          title={'Services'}
+        />
         <Services />
+        <Separator 
+          title={'Testimonials'}
+        />
         <Reviews />
       </div>
     </>

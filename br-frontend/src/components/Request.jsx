@@ -19,6 +19,7 @@ const Request = ({ request }) => {
         <h2>{request.title}</h2>
         <p>{request.message}</p>
         <p>Customer: {request?.name}</p>
+        <p>Description: {request?.description}</p>
         <p>Email: {request?.email}</p>
         <p>Phone: {request?.phone}</p>
         <form onSubmit={handleSubmit}>

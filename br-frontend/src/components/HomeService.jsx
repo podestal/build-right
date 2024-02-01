@@ -9,7 +9,6 @@ const HomeService = ({ service }) => {
             <h3>{service.title}</h3>
             <p>{service.description}</p>
         </div>
-        {console.log('images', service.title,service?.service_image)}
         <Carousel>
             {service?.service_image.map(image => <img className='carousel-img' src={image.image} alt={`${service.title}-${image.id}`}/>)}
         </Carousel>

@@ -20,7 +20,6 @@ const Services = () => {
 
   return (
     <div>
-        <h2>Services</h2>
         {services.data.map(service => {
             if (route == 'services') {
                 return <Service 

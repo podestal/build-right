@@ -3,8 +3,8 @@ import Review from './Review'
 import HomeReview from './HomeReview'
 import { useQuery } from '@tanstack/react-query'
 import { getReviews } from '../api/api'
-import CreateUpdateForm from './CreateUpdateForm'
 import useAuth from '../hooks/useAuth'
+import Carousel from 'react-elastic-carousel'
 
 const Reviews = () => {
 
@@ -23,19 +23,18 @@ const Reviews = () => {
 
   return (
     <div className='main-container'>
-        {reviews && reviews.data.map(review => {
-            if (route == 'testimonials') {
-                return <Review 
-                key={review.id}
-                review={review}
-                />
-            } else {
-                return <HomeReview 
-                key={review.id}
-                review={review}
-                />
-            }
-        })}
+        <Carousel>
+            {route == 'home' && reviews.data.map(review => (
+                <HomeReview 
+                    key={review.id}
+                    review={review}
+                />))}
+        </Carousel>
+        {route == 'testimonials' && reviews.data.map(review => (
+                <Review 
+                    key={review.id}
+                    review={review}
+                />))}
     </div>
   )
 }

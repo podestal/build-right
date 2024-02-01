@@ -1,12 +1,15 @@
 import React from 'react'
 import Header from '../components/Header'
+import Separator from '../components/Separator'
 
 const Process = () => {
   return (
     <div className='main-container '>
         <Header />
         <section className='process-container'>
-            <h2>The Process</h2>
+            <Separator 
+                title={'The Process'}
+            />
             <div className='process-item initial left'>
                 <p>Initial Consultation</p>
             </div>

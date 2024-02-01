@@ -220,7 +220,7 @@ img {
 
 .home-service-container .carousel-img {
   width: 450px;
-  height: 350px;
+  height: 300px;
   border-radius: 15px;
 }
 
@@ -239,7 +239,7 @@ img {
 
 .service-container .images-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 
 /* Process */
@@ -327,7 +327,7 @@ img {
 }
 
 .review-container h2 {
-  font-size: 3rem;
+  font-size: 2.6rem;
   margin: 1.7rem auto;
 }
 
@@ -385,4 +385,23 @@ button.iWchow.rec.rec-arrow.rec-arrow-right:focus {
 button.rec-dot_active {
   background-color: #c1121f;
   box-shadow: none;
+}
+
+.separator-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  text-align: center;
+  margin: 4.5rem auto;
+}
+
+.separator-container h2 {
+  font-size: 3.6rem;
+}
+
+.separator-line {
+  width: 50%;
+  border-bottom: 1px solid #c1121f;
+  margin: auto;
+  margin-top: 1.2rem;
 }
